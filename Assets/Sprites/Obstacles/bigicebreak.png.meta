@@ -1,0 +1,350 @@
+fileFormatVersion: 2
+guid: 556a28189372d7546ad2307bddd12fca
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2703375650689206471
+    second: bigicebreak_0
+  - first:
+      213: -3351574154419442914
+    second: bigicebreak_1
+  - first:
+      213: -3998459423596900587
+    second: bigicebreak_2
+  - first:
+      213: 1504480865523112576
+    second: bigicebreak_3
+  - first:
+      213: -9163657031108229041
+    second: bigicebreak_4
+  - first:
+      213: 6226538113851501439
+    second: bigicebreak_5
+  - first:
+      213: 7145372338261111079
+    second: bigicebreak_6
+  - first:
+      213: -3452061531177471826
+    second: bigicebreak_7
+  - first:
+      213: -6773492419835668408
+    second: bigicebreak_8
+  - first:
+      213: -4328158142246991953
+    second: bigicebreak_9
+  - first:
+      213: 4844358376830640583
+    second: bigicebreak_10
+  - first:
+      213: 5719082218712951633
+    second: bigicebreak_11
+  - first:
+      213: 2341273488883758501
+    second: bigicebreak_12
+  - first:
+      213: 71400991522753692
+    second: bigicebreak_13
+  - first:
+      213: 3427986085066541581
+    second: bigicebreak_14
+  - first:
+      213: -2216074603733627584
+    second: bigicebreak_15
+  - first:
+      213: -4581732949464402365
+    second: bigicebreak_16
+  - first:
+      213: -2122521873932379401
+    second: bigicebreak_17
+  - first:
+      213: 2257006742482815243
+    second: bigicebreak_18
+  - first:
+      213: -8686923524638146295
+    second: bigicebreak_19
+  - first:
+      213: 6813123950258475190
+    second: bigicebreak_20
+  - first:
+      213: -6293976733858341664
+    second: bigicebreak_21
+  - first:
+      213: 1881351941271922121
+    second: bigicebreak_22
+  - first:
+      213: -5738850649830827762
+    second: bigicebreak_23
+  - first:
+      213: -3602048003568991993
+    second: bigicebreak_24
+  - first:
+      213: 6119938260044943025
+    second: bigicebreak_25
+  - first:
+      213: 3758284704092107700
+    second: bigicebreak_26
+  - first:
+      213: 7569061675401965480
+    second: bigicebreak_27
+  - first:
+      213: 7225152973423375952
+    second: bigicebreak_28
+  - first:
+      213: 3932048232299926446
+    second: bigicebreak_29
+  - first:
+      213: -7111808913438282040
+    second: bigicebreak_30
+  - first:
+      213: 769768420803921111
+    second: bigicebreak_31
+  - first:
+      213: -3474508751614127039
+    second: bigicebreak_32
+  - first:
+      213: 2430107510391367252
+    second: bigicebreak_33
+  - first:
+      213: 1195773190346011376
+    second: bigicebreak_34
+  - first:
+      213: 8611922708644546538
+    second: bigicebreak_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bigicebreak_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c845c9c4d1548520800000000000000
+      internalID: 2703375650689206471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigicebreak_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1be27f5011dc71d0800000000000000
+      internalID: -3351574154419442914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigicebreak_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f81b7c65e9288c0800000000000000
+      internalID: -3998459423596900587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigicebreak_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a90e8406df0e410800000000000000
+      internalID: 1504480865523112576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigicebreak_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4888493b7624d080800000000000000
+      internalID: -9163657031108229041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigicebreak_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7bac88cc6b196650800000000000000
+      internalID: 6226538113851501439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
