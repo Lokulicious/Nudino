@@ -18,6 +18,12 @@ public class PlayerMovement : MonoBehaviour
     float slideSpeed = 0.5f;
 
 
+    bool hasShield;
+    int shields;
+
+    bool dead;
+
+
 
     void Update()
     {
@@ -86,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (hitWall)
         {
-            rb.velocity = new Vector3(0f, -1f - slideSpeed, 0f);
+            rb.velocity = new Vector2(0f, -1f - slideSpeed);
 
 
             hitWall = false;
@@ -96,13 +102,42 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    void PlayerHit()
+    {
+        //takes away 1 shield
+        if (hasShield)
+        {
+            shields -= 1;
+        }
+        else
+        {
+            //sets player to dead if no shields
+            dead = true;
+            Debug.Log("Collison!");
+        }
+    }
+
+
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //checks for collision with wall
         if (collision.gameObject.tag == "Wall")
         {
             hitWall = true;
             isOnWall = true;
             rb.gravityScale = 0;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //checks for collision with deadly objects (obstacles / out of bounds)
+        if (collision.gameObject.tag == "Deadly")
+        {
+            PlayerHit();
+            Destroy(collision);
         }
     }
 }

@@ -6,6 +6,7 @@ public class DropSpawner : MonoBehaviour
 {
 
     public GameObject[] objectsToDrop;
+    public GameObject[] pickupsToDrop;
 
     public float timeToDrop;
     float timer;

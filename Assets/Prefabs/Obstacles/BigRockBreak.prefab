@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8756382643751186320}
   - component: {fileID: 8733676247186239941}
   - component: {fileID: -2599206513279087997}
+  - component: {fileID: -5290255216457857220}
   m_Layer: 0
   m_Name: BigRockBreak
   m_TagString: Deadly
@@ -114,7 +115,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -165,3 +166,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-5290255216457857220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8756382643751186327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faff5dcf5d0d2fa43816d05487bbb033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 8756382643751186320}
+  collider: {fileID: 8733676247186239941}
+  rb: {fileID: -2599206513279087997}
