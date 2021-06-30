@@ -1,6 +1,7 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,12 +20,16 @@ public class PlayerMovement : MonoBehaviour
 
 
     bool hasShield;
-    int shields;
+    public int shields;
 
     bool hasDash;
-    int dashes = 0;
+    public int dashes;
 
     bool isDead;
+
+
+    public Text shieldDisplay;
+    public Text dashDisplay;
 
 
 
@@ -51,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         ResetForceOnWall();
+        PickupDisplay();
     }
 
 
@@ -169,4 +175,12 @@ public class PlayerMovement : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
+    void PickupDisplay()
+    {
+        shieldDisplay.text = shields.ToString();
+        dashDisplay.text = dashes.ToString();
+    }
+
 }
+*/

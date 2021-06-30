@@ -1,6 +1,7 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -19,9 +20,16 @@ public class PlayerManager : MonoBehaviour
 
 
     bool hasShield;
-    int shields;
+    public int shields;
 
-    bool dead;
+    bool hasDash;
+    public int dashes;
+
+    bool isDead;
+
+
+    public Text shieldDisplay;
+    public Text dashDisplay;
 
 
 
@@ -36,18 +44,19 @@ public class PlayerManager : MonoBehaviour
                 DragStart();
             }
 
-            if(touch.phase == TouchPhase.Moved)
+            if (touch.phase == TouchPhase.Moved)
             {
                 Dragging();
             }
 
-            if(touch.phase == TouchPhase.Ended)
+            if (touch.phase == TouchPhase.Ended)
             {
                 DragRelease();
             }
         }
 
         ResetForceOnWall();
+        PickupDisplay();
     }
 
 
@@ -112,7 +121,8 @@ public class PlayerManager : MonoBehaviour
         else
         {
             //sets player to dead if no shields
-            dead = true;
+            isDead = true;
+            Debug.Log("Collison!");
         }
     }
 
@@ -138,5 +148,38 @@ public class PlayerManager : MonoBehaviour
             PlayerHit();
             Destroy(collision);
         }
+
+        if (collision.gameObject.tag == "Pickup")
+        {
+            //detects what kind of pickup player collided with
+            if (collision.gameObject.name == "Shield")
+            {
+                //adds shield
+                shields += 1;
+            }
+            else if (collision.gameObject.name == "Dash")
+            {
+                //adds dash
+                dashes += 1;
+            }
+            else if (collision.gameObject.name == "2XMultiplier")
+            {
+                //sets multiplier to 2
+                GameObject gameManager = GameObject.Find("GameManager");
+                GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
+                gameManagerScript.multiplier = 2;
+            }
+            //destroys the collider of the pickup
+            Destroy(collision);
+            //destroys the pickup (Change when we have an animation)
+            Destroy(collision.gameObject);
+        }
     }
+
+    void PickupDisplay()
+    {
+        shieldDisplay.text = shields.ToString();
+        dashDisplay.text = dashes.ToString();
+    }
+
 }
