@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public float jumpPower = 5f;
     public float maxDrag = 3f;
@@ -21,7 +21,10 @@ public class PlayerManager : MonoBehaviour
     bool hasShield;
     int shields;
 
-    bool dead;
+    bool hasDash;
+    int dashes = 0;
+
+    bool isDead;
 
 
 
@@ -112,7 +115,8 @@ public class PlayerManager : MonoBehaviour
         else
         {
             //sets player to dead if no shields
-            dead = true;
+            isDead = true;
+            Debug.Log("Collison!");
         }
     }
 
@@ -137,6 +141,32 @@ public class PlayerManager : MonoBehaviour
         {
             PlayerHit();
             Destroy(collision);
+        }
+
+        if (collision.gameObject.tag == "Pickup")
+        {
+            //detects what kind of pickup player collided with
+            if (collision.gameObject.name == "Shield")
+            {
+                //adds shield
+                shields += 1;
+            }
+            else if (collision.gameObject.name == "Dash")
+            {
+                //adds dash
+                dashes += 1;
+            }
+            else if (collision.gameObject.name == "2XMultiplier")
+            {
+                //sets multiplier to 2
+                GameObject gameManager = GameObject.Find("GameManager");
+                GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
+                gameManagerScript.multiplier = 2;
+            }
+            //destroys the collider of the pickup
+            Destroy(collision);
+            //destroys the pickup (Change when we have an animation)
+            Destroy(collision.gameObject);
         }
     }
 }

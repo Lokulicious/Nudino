@@ -21,7 +21,6 @@ public class DropScript : MonoBehaviour
         {
             rb.gravityScale = 0;
             animator.SetBool("PlayerCollision", true);
-            Debug.Log("player collision");
         }
     }
 

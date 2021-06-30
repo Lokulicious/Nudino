@@ -8,9 +8,10 @@ public class WallMovement : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject resetPoint;
 
-
     private float wallHeight;
     public float speed;
+
+
 
     void Start()
     {
@@ -44,6 +45,9 @@ public class WallMovement : MonoBehaviour
         if (transform.position.y <= 8 - (wallHeight * 14))
         {
             transform.position += Vector3.up * (wallHeight * 14);
+            GameObject gameManager = GameObject.Find("GameManager");
+            GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
+            gameManagerScript.AddScore(1);
         }
 
     }
