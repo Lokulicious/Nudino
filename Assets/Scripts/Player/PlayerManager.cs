@@ -47,6 +47,22 @@ public class PlayerManager : MonoBehaviour
             if (touch.phase == TouchPhase.Moved)
             {
                 Dragging();
+
+                Vector3 _dragReleasePos = Camera.main.ScreenToWorldPoint(touch.position);
+                Vector2 velocity = (dragStartPos - _dragReleasePos) * jumpPower;
+
+                Vector2[] trajectory = Plot(rb, (Vector2)transform.position, velocity, 500);
+
+                lr.positionCount = trajectory.Length;
+
+                Vector3[] positions = new Vector3[trajectory.Length];
+                for (int i = 0; i < trajectory.Length; i++)
+                {
+                    positions[i] = trajectory[i];
+/*                    positions[i].z = -11;*/
+                }
+                lr.SetPositions(positions);
+                lr.sortingLayerName = "UI";
             }
 
             if (touch.phase == TouchPhase.Ended)
@@ -180,6 +196,28 @@ public class PlayerManager : MonoBehaviour
     {
         shieldDisplay.text = shields.ToString();
         dashDisplay.text = dashes.ToString();
+    }
+
+
+    public Vector2[] Plot(Rigidbody2D rigidbody, Vector2 pos, Vector2 velocity, int steps)
+    {
+        Vector2[] results = new Vector2[steps];
+
+        float timestep = Time.fixedDeltaTime / Physics2D.velocityIterations;
+        Vector2 gravityAccel = Physics2D.gravity * rigidbody.gravityScale * timestep * timestep;
+
+        float drag = 1f - timestep * rigidbody.drag;
+        Vector2 moveStep = velocity * timestep;
+
+        for (int i = 0; i < steps; i++)
+        {
+            moveStep += gravityAccel;
+            moveStep *= drag;
+            pos += moveStep;
+            results[i] = pos;
+        }
+
+        return results;
     }
 
 }
