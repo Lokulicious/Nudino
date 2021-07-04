@@ -22,6 +22,10 @@ public class DropScript : MonoBehaviour
             rb.gravityScale = 0;
             animator.SetBool("PlayerCollision", true);
         }
+        else if (collision.gameObject.name == "BottomTrigger")
+        {
+            Destroy(gameObject);
+        }
     }
 
 

@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public Text scoreDisplay;
 
+    public int switchHeight;
+
     void Start()
     {
         score = 0;   
@@ -28,7 +30,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int scoreAmount)
     {
         score += scoreAmount * multiplier;
-        Debug.Log(score);
+/*        Debug.Log(score);*/
     }
 
 
@@ -36,5 +38,19 @@ public class GameManager : MonoBehaviour
     {
         scoreDisplay.text = score.ToString();
     }
+
+
+    public void SwitchSprite(SpriteRenderer sr, Sprite sprite1, Sprite sprite2)
+    {
+        if (switchHeight > score)
+        {
+            sr.sprite = sprite1;
+        }
+        else if (switchHeight <= score)
+        {
+            sr.sprite = sprite2;
+        }
+    }
+
 
 }

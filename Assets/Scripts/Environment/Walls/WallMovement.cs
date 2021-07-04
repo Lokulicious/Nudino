@@ -11,20 +11,30 @@ public class WallMovement : MonoBehaviour
     private float wallHeight;
     public float speed;
 
+    public SpriteRenderer sr;
+    public Sprite lowWall;
+    public Sprite spaceWall;
 
+    GameObject gameManager;
+    GameManager gameManagerScript;
 
     void Start()
     {
         wallHeight = GetComponent<BoxCollider2D>().size.y;
         rb = GetComponent<Rigidbody2D>();
         speed = 1;
-/*        transform.position = new Vector3(transform.position.x, 8, transform.position.z);*/
+        /*        transform.position = new Vector3(transform.position.x, 8, transform.position.z);*/
+
+        gameManager = GameObject.Find("GameManager");
+        gameManagerScript = gameManager.GetComponent<GameManager>();
+
     }
 
 
     private void Update()
     {
         WallReset();
+        gameManagerScript.SwitchSprite(sr, lowWall, spaceWall);
     }
 
     void FixedUpdate()
@@ -49,7 +59,8 @@ public class WallMovement : MonoBehaviour
             GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
             gameManagerScript.AddScore(1);
         }
-
     }
+
+
 
 }
