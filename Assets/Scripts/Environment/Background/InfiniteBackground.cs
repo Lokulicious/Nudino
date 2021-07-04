@@ -23,12 +23,9 @@ public class InfiniteBackground : MonoBehaviour
 
     private void Start()
     {
-        /*        BGHeight = GetComponent<BoxCollider2D>().size.y;*/
         BGHeight = GetComponent<Renderer>().bounds.size.y;
         gameManager = GameObject.Find("GameManager");
         gameManagerScript = gameManager.GetComponent<GameManager>();
-        
-        /*        generateSecondBackground = false;*/
     }
 
     void Update()
@@ -36,7 +33,6 @@ public class InfiniteBackground : MonoBehaviour
         if (generateSecondBackground && isActivated)
         {
             Instantiate(loopBackground, new Vector3(transform.position.x, transform.position.y + BGHeight, transform.position.z), transform.rotation);
-            Debug.Log("instantiated second bg");
             generateSecondBackground = false;
 
         }

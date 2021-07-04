@@ -20,6 +20,7 @@ public class DropSpawner : MonoBehaviour
     private int objectArrayStart;
     private int objectArrayStop;
 
+    public float pickupChance;
 
 
     void Start()
@@ -53,13 +54,30 @@ public class DropSpawner : MonoBehaviour
     }
 
 
+    bool DropPickup()
+    {
+        if (Random.value < pickupChance)
+        {
+            return true;
+        }
+        return false;
+    }
+
+
 
     void DropObjects() 
     {
         if (timer <= 0)
         {
             spawnPlace = Random.Range(-dropRange, dropRange);
-            Instantiate(objectsToDrop[Random.Range(objectArrayStart, objectArrayStop)], new Vector3(spawnPlace, transform.position.y, transform.position.z), transform.rotation);
+            if (DropPickup())
+            {
+                Instantiate(pickupsToDrop[Random.Range(0, pickupsToDrop.Length)], new Vector3(spawnPlace, transform.position.y, transform.position.z), transform.rotation);
+            }
+            else if (!DropPickup())
+            {
+                Instantiate(objectsToDrop[Random.Range(objectArrayStart, objectArrayStop)], new Vector3(spawnPlace, transform.position.y, transform.position.z), transform.rotation);
+            }
             timer = timeToDrop;
         }
 
