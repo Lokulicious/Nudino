@@ -8,7 +8,8 @@ public class PlayerManager : MonoBehaviour
     public float jumpPower = 5f;
     public float maxDrag = 3f;
     public Rigidbody2D rb;
-    public LineRenderer lr;
+
+    public Trajectory trajectory;
 
     Vector3 dragStartPos;
     Touch touch;
@@ -33,6 +34,9 @@ public class PlayerManager : MonoBehaviour
 
 
 
+
+
+
     void Update()
     {
         if (Input.touchCount > 0 && isOnWall)
@@ -47,7 +51,7 @@ public class PlayerManager : MonoBehaviour
             if (touch.phase == TouchPhase.Moved)
             {
                 Dragging();
-
+/*
                 Vector3 _dragReleasePos = Camera.main.ScreenToWorldPoint(touch.position);
                 Vector2 velocity = (dragStartPos - _dragReleasePos) * jumpPower;
 
@@ -59,10 +63,10 @@ public class PlayerManager : MonoBehaviour
                 for (int i = 0; i < trajectory.Length; i++)
                 {
                     positions[i] = trajectory[i];
-/*                    positions[i].z = -11;*/
+                    positions[i].z = -10;
                 }
                 lr.SetPositions(positions);
-                lr.sortingLayerName = "UI";
+                lr.sortingLayerName = "UI";*/
             }
 
             if (touch.phase == TouchPhase.Ended)
@@ -82,8 +86,8 @@ public class PlayerManager : MonoBehaviour
     {
         dragStartPos = Camera.main.ScreenToWorldPoint(touch.position);
         dragStartPos.z = 0f;
-        lr.positionCount = 1;
-        lr.SetPosition(0, dragStartPos);
+
+        trajectory.Show();
     }
 
 
@@ -91,14 +95,20 @@ public class PlayerManager : MonoBehaviour
     {
         Vector3 draggingPos = Camera.main.ScreenToWorldPoint(touch.position);
         draggingPos.z = 0f;
-        lr.positionCount = 2;
-        lr.SetPosition(1, draggingPos);
+
+
+
+        Vector3 force = dragStartPos - draggingPos;
+        Vector3 clampedForce = Vector3.ClampMagnitude(force, maxDrag) * jumpPower;
+
+
+        trajectory.UpdateDots(transform.position, -clampedForce);
     }
 
 
     void DragRelease()
     {
-        lr.positionCount = 0;
+  
 
         Vector3 dragReleasePos = Camera.main.ScreenToWorldPoint(touch.position);
         dragReleasePos.z = 0f;
@@ -109,6 +119,8 @@ public class PlayerManager : MonoBehaviour
         rb.AddForce(-clampedForce, ForceMode2D.Impulse);
         isOnWall = false;
         rb.gravityScale = 0.8f;
+
+        trajectory.Hide();
     }
 
 

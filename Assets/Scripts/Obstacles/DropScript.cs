@@ -10,10 +10,6 @@ public class DropScript : MonoBehaviour
     public Rigidbody2D rb;
 
 
-    private void Start()
-    {
-
-    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
