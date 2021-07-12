@@ -11,6 +11,9 @@ public class DropSpawner : MonoBehaviour
     public GameObject[] objectsToDrop;
     public GameObject[] pickupsToDrop;
 
+    public Transform objectParent;
+    public Transform pickupParent;
+
     public float timeToDrop;
     float timer;
 
@@ -72,11 +75,11 @@ public class DropSpawner : MonoBehaviour
             spawnPlace = Random.Range(-dropRange, dropRange);
             if (DropPickup())
             {
-                Instantiate(pickupsToDrop[Random.Range(0, pickupsToDrop.Length)], new Vector3(spawnPlace, transform.position.y, transform.position.z), transform.rotation);
+                Instantiate(pickupsToDrop[Random.Range(0, pickupsToDrop.Length)], new Vector3(spawnPlace, transform.position.y, transform.position.z), transform.rotation, pickupParent);
             }
             else if (!DropPickup())
             {
-                Instantiate(objectsToDrop[Random.Range(objectArrayStart, objectArrayStop)], new Vector3(spawnPlace, transform.position.y, transform.position.z), transform.rotation);
+                Instantiate(objectsToDrop[Random.Range(objectArrayStart, objectArrayStop)], new Vector3(spawnPlace, transform.position.y, transform.position.z), transform.rotation, objectParent);
             }
             timer = timeToDrop;
         }

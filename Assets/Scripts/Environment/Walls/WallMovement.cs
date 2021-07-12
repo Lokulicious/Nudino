@@ -6,7 +6,6 @@ public class WallMovement : MonoBehaviour
 {
 
     private Rigidbody2D rb;
-    public GameObject resetPoint;
 
     private float wallHeight;
     public float speed;

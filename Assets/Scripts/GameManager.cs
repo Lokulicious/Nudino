@@ -36,7 +36,8 @@ public class GameManager : MonoBehaviour
 
     void DisplayScore()
     {
-        scoreDisplay.text = score.ToString();
+        int displayScore = score / 2;
+        scoreDisplay.text = displayScore.ToString();
     }
 
 

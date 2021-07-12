@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: bfe7c49fa2c56fd48bcee03a9c0fa7af
+  - enabled: 1
+    path: Assets/Scenes/nudino.unity
+    guid: 81e60a7596d3b10468239caf2643e588
   m_configObjects: {}

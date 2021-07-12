@@ -211,7 +211,14 @@ public class PlayerManager : MonoBehaviour
     }
 
 
-    public Vector2[] Plot(Rigidbody2D rigidbody, Vector2 pos, Vector2 velocity, int steps)
+
+    void Death()
+    {
+        
+    }
+    
+
+/*    public Vector2[] Plot(Rigidbody2D rigidbody, Vector2 pos, Vector2 velocity, int steps)
     {
         Vector2[] results = new Vector2[steps];
 
@@ -231,5 +238,5 @@ public class PlayerManager : MonoBehaviour
 
         return results;
     }
-
+*/
 }

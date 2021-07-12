@@ -7,10 +7,9 @@ public class GenerateWalls : MonoBehaviour
 {
 
     public GameObject wall;
-
     public int amountOfWalls;
-
     private float wallHeight;
+    public Transform parent;
 
     void Start()
     {
@@ -20,7 +19,7 @@ public class GenerateWalls : MonoBehaviour
 
         for (int i = 0; i < amountOfWalls; i++)
         {
-            Instantiate(wall, new Vector3(transform.position.x, i * wallHeight - 30, 0f), wall.transform.rotation);
+            Instantiate(wall, new Vector3(transform.position.x, i * wallHeight - 30, 0f), wall.transform.rotation, parent);
         }   
     }
 
